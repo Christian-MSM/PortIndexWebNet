@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+
+    <style>
+        .mainNav {
+            background-color: transparent; /*#1d1d1d8c;*/
+            position: fixed !important;
+            z-index: 2;
+            width: 100vw;
+            /*filter: drop-shadow(-5px 0px 15px black);*/
+            filter: drop-shadow(0px 0px 2px black);
+            padding: 3.5vh 4vw !important;
+            min-height: 14vh;
+            top: 0px;
+        }
+        .mainNavDark {
+            background-color: #1d1d1d8c;
+        }
+        .navBarText {
+            filter: drop-shadow(2px 4px 6px black);
+        }
+
+        .navBarTextMedium {
+            font-size: large !important;
+            font-weight: 500;
+        }
+
+        .navBarTextBig {
+            font-size: x-large !important;
+            font-weight: 500;
+        }
+
+        .navBarTextLarge {
+            font-family: monospace;
+            font-size: xx-large !important;
+            font-weight: 500;
+        }
+
+        .nav-item {
+            margin: auto;
+            margin-right:2%;
+        }
+
+        .contenedorPrincipal {
+            overflow-y: hidden;
+            background-color: #212529;
+            height: calc( 100vh );/* - 14vh );*/
+            /*margin-top: 14vh;*/
+        }
+        .spanSubtitle {
+            font-size: x-large;
+            font-family: monospace;
+            display: block;
+            /*color: antiquewhite;*/
+            color: #ffca84;
+        }
+        .divButtonCv {
+            min-width: 145px;
+            border: 2px solid #52a6ff;
+            border-radius: 10px;
+            text-align: center;
+            padding: 5px 5px;
+            margin: auto;
+            /*position: absolute;*/
+            right: 4vw;
+            color: #52a6ff;
+            font-family: monospace;
+            margin-right:2%;
+        }
+        .linkButtonCv {
+            background-color: transparent;
+            color: #52a6ff;
+        }
+        .divButtonCv:hover {
+            background-color: #52a6ff;
+        }
+        .divButtonCv:hover .linkButtonCv {
+            color: #1d1d1d;
+            text-decoration: none;
+            font-weight: bolder;
+        }
+    </style>
+
+    @RenderSection("PriorityStyles", required: false)
+    @RenderSection("PriorityScripts", required: false)
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    @RenderSection("DependantStyles", required: false)
+    @RenderSection("DependantScripts", required: false)
+</head>
+<body>
+
+    <nav class="mainNav navbar navbar-expand-lg navbar-dark mainNav">
+
+        <a class="navbar-brand NavBarText NavBarTextLarge" href="#!">
+            Christian M. Sanchez Montaño
+            <span class="spanSubtitle">Desarrollador Web</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#CollapsibleMainNav" aria-expanded="false" aria-controls="CollapsibleMainNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="CollapsibleMainNav">
+
+            <ul class="navbar-nav" style="padding-right: 40px;">
+
+                <li class="nav-item active" data-menu="Introduccion">
+                    <a class="nav-link navBarText navBarTextMedium navBarTextBig" href="#containerIntro">Introduccion</a>
+                </li>
+                <li class="nav-item" data-menu="Habilidades">
+                    <a class="nav-link navBarText navBarTextMedium" href="#containerSkills">Habilidades</a>
+                </li>
+                <li class="nav-item" data-menu="Tecnologias">
+                    <a class="nav-link navBarText navBarTextMedium" href="#containerTech">Tecnologias</a>
+                </li>
+                <li class="nav-item" data-menu="Experiencia">
+                    <a class="nav-link navBarText navBarTextMedium" href="#containerExp">Experiencia</a>
+                </li>
+                <li class="nav-item" data-menu="Portafolio">
+                    <a class="nav-link navBarText navBarTextMedium" href="#containerPort">Portafolio</a>
+                </li>
+                <li class="nav-item" data-menu="Intereses">
+                    <a class="nav-link navBarText navBarTextMedium" href="#containerInt">Intereses</a>
+                </li>
+                <div class="divButtonCv">
+                    <a class="linkButtonCv" href="#" style="background-color: transparent;">Descargar CV</a>
+                </div>
+            </ul>
+        </div>
+    </nav>
+    
+
+    <div class="contenedorPrincipal">
+        @RenderBody()
+    </div>
+
+    <script>
+
+        $(document).ready(function () {
+            
+            $('.nav-item').click(function () {
+                $('.nav-item').removeClass('active');
+                $('.nav-link').removeClass('navBarTextBig');
+                $(this).addClass('active').find('.nav-link').addClass('navBarTextBig');
+            });
+
+        });
+
+        //function MovingImgCalc(event) {
+
+        //    var newPosX = (($(window).width() / 2) - event.pageX) * 0.05;
+        //    var newPosY = (($(window).height() / 2) - event.pageY) * 0.05;
+        //    $('.movingImgBack').css({
+        //        'margin-left': newPosX + 'px',
+        //        'margin-top': newPosY + 'px'
+        //    },200);
+        //}
+       
+
+    </script>
+
+    @RenderSection("DelayedScripts", required: false)
+
+</body>
+</html>

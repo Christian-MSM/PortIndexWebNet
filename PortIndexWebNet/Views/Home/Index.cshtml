@@ -1,0 +1,440 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@section PriorityStyles{
+
+    <style>
+        @@font-face {
+            font-family: 'Montserrat';
+            src: url('/fonts/Montserrat-Light.ttf');
+        }
+
+
+        .subContainer {
+            overflow: hidden;
+            height: calc( 100vh); /*- 14vh );*/
+            width: 100vw;
+            padding: 50px;
+            
+        }
+        .movingImgContainer {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background-color: #fff;
+        }
+
+        .movingImgBack {
+            width: 120%;
+            height: 120%;
+            left: -10%;
+            top: -10%;
+            position: absolute;
+            background-image: url(/Img/SomeCodeNoSql.png);
+            background-size: cover;
+            background-position: center;
+            filter: blur(5px);
+        }
+        .containerGreeting{
+            position:relative;
+        }
+        .subContainerGreeting {
+            
+            color: white;
+            font-family: 'Montserrat';
+            font-weight: bold;
+            font-size: 64px;
+            width: 54vw;
+            position: absolute;
+            /*bottom: 30vh;*/
+            top: 30%;
+            left: 10vw;
+            min-width: 600px;
+            margin: auto;
+            
+        }
+        .greetingText {
+            color: white;
+            font-family: 'Montserrat';
+            font-weight: 500;
+            font-size: 64px;
+            font-size: 2vw;
+        }
+        .greetingTitleSpan {
+            /*color: wheat;*/
+            color: #ffca84;
+            font-family: 'Montserrat';
+            font-weight: 700;
+            font-size: 5.5vw;
+        }
+        
+        
+        
+        .containerSkills {
+            background: #1d1d1d;
+            padding-top: 22vh;
+        }
+        .containerBackground {
+            width: 100%;
+            height: 100%;
+            /* position: absolute; */
+            z-index: 5;
+            /* background: #212529;*/
+        }
+        .containerSkillsBackground {
+            
+            width: 106%;
+            margin-left: -3vw;
+            margin-right: -3vw;
+            height: 27vw;
+            /* position: absolute; */
+            z-index: 5;
+            /* background: #212529;*/
+        }
+        .skillsTextContainer {
+            color: whitesmoke;
+            /*width: 75vw;*/
+            /*margin: 0 auto;*/
+            min-width: 800px;
+            text-align: center;
+        }
+        .skillsTextTitle {
+            /*color: #ffca84;*/
+            color: white;
+            text-align: center;
+            height: 65px;
+            font-weight: 400;
+        }
+        .skillsTextBody {
+            font-family: 'Montserrat';
+            color: antiquewhite;
+        }
+        .scrollIndicator {
+            position: absolute;
+            bottom: 1vw;
+            right: 50%;
+            width: 30px;
+            height: 50px;
+            margin-left: -15px;
+            border: 2px solid #fff;
+            border-radius: 50px;
+            box-sizing: border-box;
+            z-index: 3;
+            transform:translateX(50%);
+        }
+        .separadorLight {
+            margin: 50px auto;
+            border-color: #ffca84;
+            opacity: 0.5;
+            max-width: 75%;
+        }
+        .skillsWrapper {
+            max-width: 75vw;
+            display: flex;
+            flex-flow: row wrap;
+            align-content: space-around;
+            justify-content: space-evenly;
+            height: 55vh;
+            align-items: center;
+            margin: auto;
+        }
+        .iconoDark img {
+            filter: invert(1);
+        }
+        .divIconoSkill{
+            min-width:20vw;
+            text-align:center;
+        }
+        .divIconoSkill img{
+            width: 117px;
+            /* background: #1d1d1d; */
+            padding: 19px;
+            border-radius: 5px;
+            border: 2px solid #52a6ff;
+        }
+        .iconoHtml5 img{
+            width: 198px;
+            filter: invert(1);
+        }
+        .iconoCss3 img {
+            width: 150px;
+        }
+    </style>
+    
+}
+<span class="scrollIndicator" ></span>
+
+<div class="subContainer containerGreeting" id="containerIntro">
+    <div class="movingImgBack"></div>
+        <div class="subContainerGreeting">
+        <div class="greetingText">
+            <span class="greetingTitleSpan">Hola soy Christian,</span>
+            <br>Desarrollador Web FullStack con amplia experiencia en desarrollo de aplicaciones con .NET
+        </div>
+    </div>
+    
+</div>
+
+<div class="subContainer containerSkills" id="containerSkills">
+
+    <div class="containerBackground containerSkillsBackground">
+
+        <div class="skillsTextContainer">
+            <h1 class="skillsTextTitle">Habilidades</h1>
+            <p class="skillsTextBody">A continuacion algunas de las habilidades que se me han pegado en el camino (pasa el mouse para mas informacion) </p>
+            <p class="skillsTextBody" style="display:none;">Desarrollo agil multiplataforma con el atractivo visual y  flexibilidad que brindan las herramientas web por excelencia(Html,css y js), soportadas sobre la robustes que proporcionan la familia de productos para desarrollo de microsoft (.Net, Mvc, WebApi, Xamarin, etc.) </p>
+        </div>
+
+        @*<hr class="separadorLight">*@
+
+        <div class="skillsWrapper">
+
+            <div class="divIconoSkill iconoHtml5">
+                <div>
+                    <img src="~/Img/html5_dark.png" />
+                </div>
+                
+            </div>
+
+            <div class="divIconoSkill iconoCss3">
+                <div>
+                    <img src="~/Img/css3_dark.png" />
+                </div>
+                
+            </div>
+            <div class="divIconoSkill iconoJs">
+                <div>
+                    <a title="Chris Williams, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Unofficial_JavaScript_logo_2.svg">
+                        <img width="256" alt="Unofficial JavaScript logo 2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/256px-Unofficial_JavaScript_logo_2.svg.png">
+                    </a>
+                </div>
+                
+            </div>
+
+            <div class="divIconoSkill iconoPhyton">
+                <div>
+                    <a title="www.python.org, GPL <http://www.gnu.org/licenses/gpl.html>, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Python-logo-notext.svg">
+                        <img width="64" alt="Python-logo-notext" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/64px-Python-logo-notext.svg.png">
+                    </a>
+                </div>
+               
+            </div>
+            <div class="divIconoSkill iconoDotNet">
+                <div>
+                    <a title="Microsoft, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Microsoft_.NET_logo.png">
+                        <img width="256" alt="Microsoft .NET logo" src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Microsoft_.NET_logo.png">
+                    </a>
+                </div>
+               
+            </div>
+            <div class="divIconoSkill iconoMvc iconoDark">
+                <div>
+                    <a title="Microsoft, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Microsoft_.NET_logo.png">
+                        <img width="256" alt="Microsoft .NET logo" src="https://www.madjidov.com/img/technos/ASP.NET%20MVC-light.webp">
+                    </a>
+                </div>
+                
+            </div>
+          
+
+        </div>
+
+    </div>
+    
+</div>
+
+<div class="subContainer" id="containerTech" style="
+    background: antiquewhite;
+">
+
+    <div class="containerBackground" style="
+        width: 100%;
+        height: 100%;
+        /* position: absolute; */
+        z-index: 5;
+        /* background: #212529; */
+    ">
+        <div class="skillsTextContainer" style="
+            color: whi;
+            width: 75vw;
+            margin: 0 auto;
+            min-width: 800px;
+            text-align: center;
+        ">
+            <h1 class="skillsTextTitle" style="
+                color: #52a6ff;
+                text-align: center;
+                height: 65px;
+            ">
+                Tecnologias
+            </h1>
+
+            <p class="skillsTextBody" style="font-family: 'Montserrat';color: black;">Algunas de las herramientas junto con su nivel de maestria</p>
+        </div><hr style="
+            margin: 50px auto;
+            border-color: #52a6ff;
+            opacity: 0.5;
+            max-width: 75%;
+        ">
+        <div class="" style="
+            /* margin-top: 4vw; */
+            max-width: 95vw;
+            display: flex;
+            flex-flow: row wrap;
+            align-content: stretch;
+            justify-content: space-evenly;
+            height: 55vh;
+            align-items: center;
+            margin: auto;
+            flex-wrap: wrap;
+            flex-direction: row;
+        ">
+            <div style="
+                height: 25vw;
+                width: 25vw;
+            ">
+                <h3 style="
+                    color: #52a6ff;
+                ">
+                    Tool
+                </h3><ul style="
+                        list-style-type: none;
+                        margin: 0px;
+                        padding: 0px;
+                        padding-left: 5px;
+                    ">
+                    <li>
+                        <span>Tool1</span><span>
+                            <span class="glyphicon glyphicon-star filled"></span>
+                            <span class="glyphicon glyphicon-star filled"></span>
+                            <span class="glyphicon glyphicon-star filled"></span>
+                            <span class="glyphicon glyphicon-star filled"></span>
+                            <span class="glyphicon glyphicon-star filled"></span>
+                        </span>
+                    </li>
+                    <li>Tool2</li>
+                    <li>Tool3</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+@*<div class="subContainer" id="containerTech">
+    <ul>
+        <li>Chompus</li>
+        <li>Tablets</li>
+        <li> Motos</li>
+    </ul>
+</div>*@
+
+<div class="subContainer" id="containerExp">
+    <div>
+        <p>
+            Aca iria una parrafillo de mi historia resumida
+        </p>
+    </div>
+    <div>
+        <p>
+            Luego una linea del tiempo de mis aventuras
+        </p>
+    </div>
+    <div>
+        <p>
+            Finalmente una lista de los proyectos que he trabajado, al hacer click sobre cualquiera se deberia desplegar el detalle de ese proyectop
+        </p>
+    </div>
+</div>
+<div class="subContainer" id="containerPort">
+    <div>
+        <p>
+            Aca un monton de cuadritos con capturas de mis proyectos y links a aquellos que sean accesibles
+        </p>
+    </div>
+
+</div>
+<div class="subContainer" id="containerInt">
+    <div>
+        <p>
+            Aca un poco sobre mi mis medidas y asi uwu owo awas de kiwis
+        </p>
+
+    </div>
+</div>
+@section DependantScripts{
+    <script>
+
+        $(document).ready(function () {
+
+            $('.contenedorPrincipal').on('mousewheel DOMMouseScroll', function (event) {
+                smoothScroll(event);
+            });
+            $('body').mousemove(function (event) {
+                MovingImgCalc(event);
+            });
+
+        });
+
+        function smoothScroll(event) {
+
+            var container = $('.contenedorPrincipal')
+            var actualMenuItem = $('.nav-item.active');
+
+            if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
+
+                console.log("going down");
+
+                //down
+                actualMenuItem = actualMenuItem.prev('.nav-item');
+                if (actualMenuItem.length == 0) return false;
+
+                $('.contenedorPrincipal').off('mousewheel DOMMouseScroll');
+                container.stop().animate({
+                    scrollTop: $(actualMenuItem.find('a').attr('href')).offset().top - container.offset().top + container.scrollTop()
+                }, function () {
+                        setTimeout(function () {
+                            $('.contenedorPrincipal').on('mousewheel DOMMouseScroll', function (event) {
+                                smoothScroll(event);
+                            });
+                        },0);
+                    
+                });
+
+
+            } else if (event.originalEvent.wheelDelta < 0 || event.originalEvent.detail > 0) {
+                //up
+
+                console.log("going up???");
+
+                actualMenuItem = actualMenuItem.next('.nav-item');
+                if (actualMenuItem.length == 0) return false;
+
+                $('.contenedorPrincipal').off('mousewheel DOMMouseScroll');
+                container.stop().animate({
+                    scrollTop: $(actualMenuItem.find('a').attr('href')).offset().top - container.offset().top + container.scrollTop()
+                }, function () {
+                        setTimeout(function () {
+                            $('.contenedorPrincipal').on('mousewheel DOMMouseScroll', function (event) {
+                                smoothScroll(event);
+                            });
+                        },0);
+                });
+
+            }
+            $('.nav-item').removeClass('active',500);
+            $('.nav-link').removeClass('navBarTextBig',500);
+            actualMenuItem.addClass('active').find('.nav-link').addClass('navBarTextBig',500);
+        }
+
+        function MovingImgCalc(event) {
+
+            var newPosX = (($(window).width() / 2) - event.pageX) * 0.10;
+            var newPosY = (($(window).height() / 2) - event.pageY) * 0.10;
+            $('.movingImgBack').css({
+                'margin-left': newPosX + 'px',
+                'margin-top': newPosY + 'px'
+            });
+        }
+        
+        
+    </script>
+}
